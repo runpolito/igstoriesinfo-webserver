@@ -9,6 +9,8 @@ for envVar in envVars:
     if not os.environ.get(envVar):
         print('Environment variable ' + envVar + ' not found. Exiting...')
         exit()
+# Define port
+PORT = os.environ.get('PORT', 3001)
 
 # Create Flask app
 app = Flask(__name__)
@@ -79,4 +81,4 @@ def ready():
 
 # Activate the server
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=3001)
+    app.run(host='0.0.0.0', port=PORT)
