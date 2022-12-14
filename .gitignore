@@ -1,0 +1,17 @@
+# Logs
+logs
+*.log
+
+# Output of 'npm pack'
+*.tgz
+
+# dotenv environment variables file
+.env
+.env.test
+
+# Temporary files
+# tmp/
+# Local test file
+local-test/
+# Session files
+session
