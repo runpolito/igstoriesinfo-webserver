@@ -69,6 +69,29 @@ def get_stories(username):
     # Return the stories info
     return make_response(jsonify(stories), 200)
 
+# Remove the session file
+@app.route('/api/igstories/remove-session')
+def remove_session():
+    """
+    Remove the session file
+
+    Args:
+        None
+    Returns:
+        None
+    Raises:
+        None
+    """
+
+    # Define the session file path
+    sessionFilePath = './session'
+    # Remove the session file
+    try:
+        os.remove(sessionFilePath)
+        return make_response(jsonify('Session file removed'), 200)
+    except:
+        return make_response('Cannot remove session file', 500)
+
 # Living check
 @app.route('/api/igstories/living')
 def living():
